@@ -1,0 +1,24 @@
+{
+  "name": "diophantus",
+  "version": "0.0.1",
+  "description": "Logger for alan cralwer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealRecognizeReal/diophantus.git"
+  },
+  "author": "Taewoo Kim <xodn4195@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RealRecognizeReal/diophantus/issues"
+  },
+  "homepage": "https://github.com/RealRecognizeReal/diophantus#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "mongodb": "^2.2.10"
+  }
+}
