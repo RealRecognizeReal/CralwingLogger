@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "diophantus",
-      "script": "index",
+      "script": "index.js",
       "watch": false,
       "env": {
         "NODE_ENV": "production"
