@@ -1,6 +1,7 @@
 {
   "apps": [
     {
+      "name": "diophantus",
       "script": "index",
       "watch": false,
       "env": {
