@@ -11,9 +11,11 @@ const
 
 let timer;
 
+let db;
+
 let log = Promise.coroutine(function*() {
     try {
-        let db = yield MongoClient.connect(mongoUrl);
+        db = yield MongoClient.connect(mongoUrl);
 
         let page = db.collection('page');
         let stat = db.collection('stat');
@@ -35,11 +37,13 @@ let log = Promise.coroutine(function*() {
 
         let {opcounters} = yield adminDB.serverStatus();
 
+        let date = new Date();
+
         yield stat.insertOne({
-            allPagesNumber, formulaPagesNumber,  formulasNumber, createdAt: new Date(), opcounters
+            allPagesNumber, formulaPagesNumber,  formulasNumber, createdAt: date, opcounters
         });
 
-        db.close();
+        //db.close();
     }
     catch(e) {
         console.error(e);
@@ -57,6 +61,10 @@ function start(interval=10000) {
 function stop() {
     if(timer) {
         clearInterval(timer);
+    }
+
+    if(db) {
+        db.close();
     }
 }
 
