@@ -43,14 +43,14 @@ let log = Promise.coroutine(function*() {
             allPagesNumber, formulaPagesNumber,  formulasNumber, createdAt: date, opcounters
         });
 
-        //db.close();
+        db.close();
     }
     catch(e) {
         console.error(e);
     }
 });
 
-function start(interval=10000) {
+function start(interval=30000) {
     if(timer) return;
 
     log();
